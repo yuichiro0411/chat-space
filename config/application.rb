@@ -13,6 +13,7 @@ module ChatSpace
       g.javascripts false
       g.halper false
       g.test_flamework false
+
    end
   end
 end
