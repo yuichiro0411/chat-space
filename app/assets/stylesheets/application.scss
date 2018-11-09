@@ -1,3 +1,62 @@
 
 @import "./reset";
 // リセットSCSSを適用させるために設定。
+
+/*
+*= require font-awesome
+*/
+#header{
+  background-color:#38AEF0;
+  height:100px;
+  width:100vw;
+    .test_header{
+    margin: 0 auto;
+    color: #FFFFFF;
+    }
+
+}
+
+#left-menu{
+  width: 260px;
+
+  height:100vw;
+
+  float:left;
+  @import "./clearfix";
+
+  .left_upper{
+    padding-left: 20px;
+    padding-right: 20px;
+    height:50px;
+    background-color: #253141;
+      @import "font-awesome";
+        .test{
+          font-size: 20px;
+          color:#FFFFFF;
+          }
+        }
+  .left_lower{
+      padding-left: 20px;
+      padding-right:20px;
+      background-color:#2f3e51;
+      height:100%;
+          .test2{
+          color:#FFFFFF;
+          }
+         }
+}
+
+#right-content{
+    padding-left: 340px;
+  .test3{
+  color: #333333;
+  font-size: 20px
+}
+
+}
+
+// #right-content{
+//       padding-top
+// }
+
+
