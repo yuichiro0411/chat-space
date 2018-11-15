@@ -8,58 +8,48 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     %script{:src => "path/footerFixed.js", :type => "text/javascript"}
 %body
-  #wrapper
-    %header
-      %p.test_header テストー
+  %header
+    %p.test_header ヘッダー
+  .left-menu
+    .left_upper
+      %p.user_name ユーザー名
+      %p.text_awesome
+        = link_to "/messages" do
+          %i.fa.fa-cog
+        %i.fas.fa-edit
+    .left_lower
+      %p.group_name 投稿者名
+      %p.new_message test.
 
-    .left-menu
-      .left_upper
-        %p.test テストでござーる。
-        %p.text_awesome
-          = link_to "/messages" do
-            %i.fa.fa-cog
-          %i.fas.fa-edit
-      .left_lower
-        %p.test2big テストでござる。
-        %p.test2small test.
-
-        %p.test2big テストでござる。
-        %p.test2small test.
-    .right_content
+      %p.group_name 投稿者名
+      %p.new_message test.
+  .right_content
+    .chat_mainspace
       .title
         %button.edit__button
           edit
-        %p.title タイトル
-        %p.title_small AAAAAAAAAAAAAAAAAABBBBBBAAAAAAAAAAAAAAAAAAAAAA
+        %p.title_group_title タイトル
+        %p.title_group_member AAAAAAAAAAAAAAAAAABBBBBBAAAAAAAAAAAAAAAAAAAAAA
       .chat_texts
         %p.testrightbold 太字
-        %p.test_date さっきだよ！
+        %p.test_date 日付日付日付
         %o.test_right_nomal
-        = fa_icon("home")
+          = fa_icon("home")
       .chat_texts
         %p.testrightbold 太字
-        %p.test_date さっきだよ！
+        %p.test_date 日付日付日付
         %o.test_right_nomal
-        = fa_icon("home")
+          = fa_icon("home")
+    #footer
+      .form_area
+        %form#message_form{:method => "post"}
+          .chat-main
+            %input.form_part{:name => "message[body]", :placeholder => "type a message", :type => "text"}/
+            %label.chat-file
+              %input#message_image_upload.fas{:type => "file", :name => "message[image]",}/
+              %i.fa.a-image
+            %input#send__button{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send!"}/
 
 
-  / %footer.testfooter
-  /   .form_area
-  /     .chat__form
-  /       %form
-  /         %input
-  /         %label.upload-label{for: "upload-icon"}
-  /           %i.fa.fa-picture-o#upload-icon
-  /     %button.send__button
-  /       send
 
-#footer
-  .form_area
-    %form#message_form{:method => "post"}
-      .chat-main
-        %input.form_part{:name => "message[body]", :placeholder => "type a message", :type => "text"}/
-        %label.chat-file
-          %input#message_image_upload.fas{:type => "file", :name => "message[image]",}/
-          %i.fa.a-image
-        %input#send__button{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send!"}/
 
