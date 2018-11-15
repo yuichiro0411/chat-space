@@ -1,62 +1,157 @@
 
-@import "./reset";
-// リセットSCSSを適用させるために設定。
 
 /*
 *= require font-awesome
 */
-#header{
-  background-color:#38AEF0;
-  height:100px;
-  width:100vw;
-    .test_header{
-    margin: 0 auto;
-    color: #FFFFFF;
+@import "./reset";
+@import "font-awesome";
+// リセットSCSSを適用させるために設定。
+
+#wrapper{
+    header{
+    background-color:#38AEF0;
+    height:25px;
+    width:100vw;
+      .test_header{
+      margin: 0 auto;
+      color: #FFFFFF;
+      text-align:center;
+      }
     }
 
-}
+  .right_content{
+      padding-left: 340px;
+      padding-bottom: 100px;
+      height:100vh;
+    .title{
+      border-bottom-color: #eeeeee;
 
-#left-menu{
-  width: 260px;
+      .title{
+      color: #333333;
+      font-size: 20px;
+      margin-top:35px;
+      }
+      .title_small{
+      font-size:12px;
+      color:#999999;
+      margin-top:15px
+      }
+      .edit__button{
+      padding-right:20px;
+      padding-left:20px;
+      margin-top:28px;
+      height:40px;
+      border-width: 3px;
+      border-color: #38AEF0;
+      float:right;
+      }
+    }
+    .chat_texts{
+      .testrightbold{
+      font-size:16px;
+      color:#434A54;
+      font-weight:bold;
+      margin-top:46px;
+      }
+      .test_date{
+        color:#999999;
+        font-size:12px;
+        }
+      .test_right_normal{
+      font-size:14px;
+      color:#434A54;
+      margin-top:10px;
+      margin-bottom:40px;
+      }
+    }
 
-  height:100vw;
+  }
 
-  float:left;
-  @import "./clearfix";
+  .left-menu{
+    width: 260px;
+    height:calc(100vh + 180px);
+    float:left;
 
-  .left_upper{
-    padding-left: 20px;
-    padding-right: 20px;
-    height:50px;
-    background-color: #253141;
+    .left_upper{
+      height:50px;
+      background-color: #253141;
+      padding-left: 20px;
+      padding-right: 20px;
       @import "font-awesome";
         .test{
-          font-size: 20px;
-          color:#FFFFFF;
-          }
+        font-size: 20px;
+        color:#FFFFFF;
         }
-  .left_lower{
+        .text_awesome{
+        text-align:right;
+        font-size:18px;
+        color:white;
+        }
+      }
+    .left_lower{
       padding-left: 20px;
-      padding-right:20px;
+      padding-right: 20px;
       background-color:#2f3e51;
       height:100%;
-          .test2{
+        .test2big{
           color:#FFFFFF;
+          font-size: 15px;
+        }
+        .test2small{
+          font-size:11px;
+          color: #FFFFFF;
+        }
+    }
+  }
+}
+
+#footer{
+background-color:#AAAAAA;
+margin-top: auto;
+  .form_area{
+
+    #message_form{
+      // padding-left: 350px;
+      // padding-bottom:20px;
+
+      // padding-top:20px;
+
+      // height:50px;
+      // width:100vw;
+      // position:fixed;
+      .chat-main{
+        .form_part{
+          font-size: 16px;
+          color:#434A54;
+          width: calc( 100% - 130px );
+          padding: 15px 10px;
+          margin: 20px 0;
+          border: none;
+        }
+        .chat-file
+          #message_image_upload{
+            display:none;
           }
-         }
+        #send__button{
+        margin-right:40px;
+        height:50px;
+        width:100px;
+        background-color: #38AEF0;
+        float:right;
+        color:white;
+        display:block;
+        border:none;
+        }
+
+          // color: #fff;
+          // width: 100px;
+          // height: 50px;
+          // margin: 20px 0;
+          // text-align: center;
+          // background-color: #38AEF0;
+          // position: absolute;
+
+      }
+    }
+  }
 }
-
-#right-content{
-    padding-left: 340px;
-  .test3{
-  color: #333333;
-  font-size: 20px
-}
-
-}
-
-// #right-content{
-//       padding-top
-// }
-
-
