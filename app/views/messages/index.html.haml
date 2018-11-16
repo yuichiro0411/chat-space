@@ -28,7 +28,6 @@
           .chat-main
             %input.form_part{:name => "message[body]", :placeholder => "type a message", :type => "text"}/
             %label.form-file{for: "upload-icon"}
-              %input#message_image_upload.far{:type => "file", :name => "message[image]", :value => "&#xf03e;"}/
               = fa_icon "image"
+              %input#upload-icon{:type => "file", :name => "message[image]"}/
             %input#send__button{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send!"}/
-

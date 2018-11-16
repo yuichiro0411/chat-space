@@ -58,7 +58,6 @@ width:100%;
     }
   }
   .right_content{
-
     .chat_mainspace{
       padding-bottom: 100px;
       height:calc(100vh - 90px);
@@ -131,11 +130,11 @@ width:100%;
               margin-right:30px
             }
             .form-file{
-              #message_image_upload{
-              position:absolute;
-              // display:none;
-              right:10px;
-              z-index:30
+                position: absolute;
+                top: 33px;
+                right: 151px;
+              #upload-icon{
+                display: none;
               }
 
             }
