@@ -1,6 +1,7 @@
 .side-bar
 	.header
 		%h3.header__name
+			= current_user.name
 		%li.list
 		= link_to do
 			= fa_icon 'pencil-square-o', class: 'icon'
@@ -12,12 +13,15 @@
 			.group__name
 			グループ名
 			.group__message
+			message
 		.group
 			.group__name
 			グループ名
 			.group__message
+			メッセージ
 		.group
 			.group__name
 			グループ名
 			.group__message
+			message
 			
