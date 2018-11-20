@@ -1,0 +1,50 @@
+  @import "font-awesome";
+
+.left-menu{
+  width:300px;
+  height:100vh;
+  float:left;
+
+  .left_upper{
+    height:50px;
+    background-color: #253141;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom:20px;
+    .user_name{
+    font-size: 20px;
+    color:$white;
+    font-weight: bold;
+    }
+    .header__list{
+    float:right;
+      .list{
+      text-align:right;
+      font-size:18px;
+      color:$white;
+        .icon{
+        color: $white;
+        }
+      }
+    }
+  }
+  .left_lower{
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color:#2f3e51;
+    height:100%;
+      .group{
+        .group_name{
+        color:#FFFFFF;
+        font-size: 15px;
+        padding-top:20px;
+        padding-bottom:5px;
+        }
+        .new_message{
+        font-size:11px;
+        color: #FFFFFF;
+        padding-bottom:20px;
+        }
+      }
+  }
+}
