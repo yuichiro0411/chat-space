@@ -5,6 +5,7 @@ body{
 /*
 *= require font-awesome
 */
+
   @import "./reset";
   // リセットSCSSを適用させるために設定。
   @import "font-awesome";
@@ -50,6 +51,7 @@ body{
         border-width: 3px;
         border-color: $light_blue;
         float:right;
+        color: #38AEF0;
         }
       }
       .chat_texts{
@@ -80,7 +82,7 @@ body{
     right:0;
     width:calc(100vw - 300px);
       .form_area{
-          height:90px;
+        height:90px;
         .form__message{
         // margin-left:40px;
         font-size: 16px;

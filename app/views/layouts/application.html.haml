@@ -7,21 +7,10 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     %script{:src => "path/footerFixed.js", :type => "text/javascript"}
-<<<<<<< Updated upstream
+    %link{:href => "https://use.fontawesome.com/releases/v5.0.6/css/all.css", :rel => "stylesheet"}/
 
-=======
-%body
-  %header
-    %p.test_header ヘッダー
-  .left-menu
-    .left_upper
-        %ul.header__lists
-          %li.list
-            = link_to do
-              = fa_icon 'pencil-square-o', class: 'icon'
-          %li.list
-            = link_to edit_user_path(current_user) do
-              = fa_icon 'cog', class: 'icon'
->>>>>>> Stashed changes
+
 = render 'layouts/notifications'
+
 = yield
+
