@@ -80,37 +80,38 @@ body{
     right:0;
     width:calc(100vw - 300px);
       .form_area{
-        height:90px;
-        margin-left:40px;
-        #message_form{
-          .chat-main{
-            width:100%;
-            .form_part{
-              font-size: 16px;
-              color:#434A54;
-              width: calc( 100% - 140px );
-              padding: 15px 10px 10px;
-              margin: 20px 0;
-              border: none;
-              position:relative;
-            }
-            .form-file{
-              #upload-icon{
-                display:none;
-              }
-            }
-            #send__button{
-            height:50px;
-            width:100px;
-            margin-top: 20px;
-            margin-right: 40px;
-            background-color: $light_blue;
-            color: $white;
-            border:none;
-            position:absolute;
+          height:90px;
+        .form__message{
+        // margin-left:40px;
+        font-size: 16px;
+        color:#434A54;
+        width: calc( 100% - 200px );
+        padding: 15px 10px 10px;
+        margin: 20px 0 0 40px;
+        border: none;
+        position:relative;
+        }
+        .chat__main{
+        position: absolute;
+        top: 33px;
+        right: 151px;
+          .chat__main__image{
+            .hidden{
+            display:none;
             }
           }
         }
+        .form__submit{
+          height:50px;
+          width:100px;
+          margin-top: 20px;
+          margin-right: 40px;
+          background-color: $light_blue;
+          color: $white;
+          border:none;
+          position:absolute;
+        }
+
       }
     }
   }

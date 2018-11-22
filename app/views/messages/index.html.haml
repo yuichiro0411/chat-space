@@ -15,22 +15,16 @@
       .title
         %button.edit__button
           edit
-        %p.title_group_title タイトル
-        %p.title_group_member 太郎、次郎、三郎、三四郎
-      .chat_texts
-        %p.testrightbold 太字
-        %p.test_date 日付日付日付
-        %o.test_right_nomal チャット文章
-      .chat_texts
-        %p.testrightbold 太字
-        %p.test_date 日付日付日付
-        %o.test_right_nomal チャット文章
+        .message
+          = render @message
     #footer
       .form_area
-        %form#message_form{:method => "post"}
-          .chat-main
-            %input.form_part{:name => "message[body]", :placeholder => "type a message", :type => "text"}/
-            %label.form-file{for: "upload-icon"}
-              = fa_icon "image"
-              %input#upload-icon{:type => "file", :name => "message[image]"}/
-            %input#send__button{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send!"}/
+        = form_for [@group, @message] do |f|
+          = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+          .chat__main
+            = f.label :image, class: 'chat__main__image' do
+              =fa_icon 'picture-o', class: 'icon'
+              =f.file_field :image, class: 'hidden'
+          =f.submit 'Send', class: 'form__submit'
+          /#form_forで2つの引数を渡している。普通、messageのCreateアクションは、messages_pathにPOSTメソッドでリクエストを送った際に実行される。今回は、messageはgroupにネストされている(ルーティング)のでパスがgroup_message_pathとなっている。@messageだけではmessage_pathにリクエストを送るのでレコード保存不可。
+          /#ネストされたモデルに対してform_forを用いる場合は、親のインスタンス（もしくは親のid）を第１引数、このモデルインスタンスを第２引数に設定する！
