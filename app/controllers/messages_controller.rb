@@ -10,7 +10,7 @@ end
 def create
 	@message = @group.messages.new(message_params)
 	if  @message.save
-		redirect_to group_message_path(@group), notice:'メッセージをが送信されました。'
+		redirect_to group_messages_path(@group), notice:'メッセージをが送信されました。'
 		#保存に成功した場合、メッセージを出してチャットページに移動。
 	else
 		@messages = @group.messages.incldes(:user)
