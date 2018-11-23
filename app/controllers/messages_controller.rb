@@ -10,8 +10,8 @@ before_action :set_group
   def create
     @message = @group.messages.new(message_params)
     if  @message.save
-        redirect_to group_messages_path(@group), notice:'メッセージをが送信されました。'
-	    #保存に成功した場合、メッセージを出してチャットページに移動。
+      redirect_to group_messages_path(@group), notice:'メッセージをが送信されました。'
+#保存に成功した場合、メッセージを出してチャットページに移動。
     else
       @messages = @group.messages.incldes(:user)
       flash.now[:alert] = 'メッセージを入力してください'
