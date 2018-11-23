@@ -8,9 +8,10 @@
   .left_upper{
     height:50px;
     background-color: #253141;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom:20px;
+    // padding-left: 20px;
+    // padding-right: 20px;
+    // padding-bottom:20px;
+    padding:0, 20px,20px;
     .user_name{
     font-size: 20px;
     color:$white;
@@ -29,16 +30,18 @@
     }
   }
   .left_lower{
-    padding-left: 20px;
-    padding-right: 20px;
+    // padding-left: 20px;
+    // padding-right: 20px;
+    padding:0,20px;
     background-color:#2f3e51;
     height:100%;
       .group{
         .group_name{
         color:#FFFFFF;
         font-size: 15px;
-        padding-top:20px;
-        padding-bottom:5px;
+        // padding-top:20px;
+        // padding-bottom:5px;
+        padding: 20px,0,5px;
         }
         .group_message{
         font-size:11px;

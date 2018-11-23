@@ -3,7 +3,7 @@ body{
   height: 100%;
   width:100%;
 /*
-*= require font-awesome
+* = require_tree .
 */
 
   @import "./reset";
@@ -42,8 +42,9 @@ body{
         margin-top:15px
         }
         .edit__button{
-        padding-right:20px;
-        padding-left:20px;
+        // padding-right:20px;
+        // padding-left:20px;
+        padding:0,20px;
         margin-top:28px;
         height:40px;
         border-width: 3px;
@@ -67,8 +68,9 @@ body{
         .test_right_normal{
         font-size:14px;
         color:#434A54;
-        margin-top:10px;
-        margin-bottom:40px;
+        // margin-top:10px;
+        // margin-bottom:40px;
+        margin:10px,0,40px
         }
       }
     }
@@ -104,8 +106,9 @@ body{
         .form__submit{
           height:50px;
           width:100px;
-          margin-top: 20px;
-          margin-right: 40px;
+          // margin-top: 20px;
+          // margin-right: 40px;
+          margin: 20px,40px,0,0;
           background-color: $light_blue;
           color: $white;
           border:none;
