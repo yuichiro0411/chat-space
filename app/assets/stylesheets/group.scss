@@ -14,7 +14,7 @@
     text-align: center;
   }
 
-  .chat-group-form__errors {
+  &__errors {
     margin: 30px 0;
     padding: 20px 40px;
     border: 1px solid #ddd;
@@ -88,11 +88,11 @@
       display: block;
     }
 
-    .chat-group-user__name {
+    &__name {
       float: left;
     }
 
-    .chat-group-user__btn {
+    &__btn {
       float: right;
       display: inline-block;
       cursor: pointer;

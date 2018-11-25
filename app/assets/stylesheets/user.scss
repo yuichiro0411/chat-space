@@ -1,5 +1,5 @@
 .account-page {
-  .account-page__inner {
+  &__inner {
     width: 980px;
     margin: 60px auto;
     padding: 60px;
@@ -7,7 +7,7 @@
     border: 1px solid #ddd;
     border-radius: 5px;
 
-    .account-page__inner--left, .account-page__inner--right {
+    &--left, &--right {
       float: left;
       width: 50%;
     }
@@ -18,7 +18,7 @@
     }
   }
 
-  .account-page__header {
+  &__header {
     h2 {
       margin-bottom: 10px;
       letter-spacing: 3px;
@@ -49,23 +49,21 @@
   }
 
   .field {
-    margin-bottom: 10px;
-    .field-label {
+    &__label {
       padding: 10px 0;
-      letter-spacing: 1px;
       font-size: 14px;
       font-weight: 200;
-
+      @include field_test();
       i {
         font-size: 11px;
       }
     }
 
-    .field-input {
+    &__input {
       input {
         width: 100%;
         padding: 10px;
-        letter-spacing: 1px;
+        @include field_test();
       }
     }
   }
