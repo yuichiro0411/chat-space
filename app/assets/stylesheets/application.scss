@@ -11,7 +11,6 @@ body{
   @import "font-awesome";
   @import "config/color.scss";
   @import "modules/flash.scss";
-
   .header{
   background-color:#38AEF0;
   height:25px;
@@ -42,8 +41,6 @@ body{
         margin-top:15px
         }
         .edit__button{
-        // padding-right:20px;
-        // padding-left:20px;
         padding:0,20px;
         margin-top:28px;
         height:40px;
@@ -68,8 +65,7 @@ body{
         .test_right_normal{
         font-size:14px;
         color:#434A54;
-        // margin-top:10px;
-        // margin-bottom:40px;
+
         margin:10px,0,40px
         }
       }
@@ -84,7 +80,6 @@ body{
       .form_area{
         height:90px;
         .form__message{
-        // margin-left:40px;
         font-size: 16px;
         color:#434A54;
         width: calc( 100% - 200px );
@@ -106,8 +101,6 @@ body{
         .form__submit{
           height:50px;
           width:100px;
-          // margin-top: 20px;
-          // margin-right: 40px;
           margin: 20px,40px,0,0;
           background-color: $light_blue;
           color: $white;
