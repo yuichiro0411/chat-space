@@ -6,15 +6,11 @@
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
+    @include clearfix();
 
     &--left, &--right {
       float: left;
       width: 50%;
-    }
-    &:after {
-      clear: both;
-      content: "";
-      display: block;
     }
   }
 

@@ -1,4 +1,4 @@
-.clearfix:after{
+@mixin clearfix:after{
   content: "";
   clear: both;
   display: block;

@@ -1,10 +1,12 @@
 
-/*
-* = require_tree .
-*/
 
   @import "./reset";
   // リセットSCSSを適用させるために設定。
   @import "font-awesome";
   @import "config/color.scss";
   @import "modules/flash.scss";
+  @import "chat_views.scss";
+  @import "sidebar.scss";
+  @import "left_lower.scss";
+  @import "group.scss";
+  @import "user.scss";
