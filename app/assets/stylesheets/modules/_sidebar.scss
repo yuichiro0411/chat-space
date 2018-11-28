@@ -5,39 +5,38 @@
   height:100vh;
   float:left;
 
-  .left_upper{
+  .left-menu__upper{
     height:50px;
     background-color: #253141;
     padding:0, 20px,20px;
-    .user_name{
+    .user__name{
     font-size: 20px;
     color:$white;
     font-weight: bold;
     }
-    .header__list{
+    .left-menu__upper--header-lists{
     float:right;
-      .list{
+      .left-menu__upper--header-lists-list{
       text-align:right;
       font-size:18px;
       color:$white;
-        .icon{
+        .left-menu__upper--header-lists-icon{
         color: $white;
         }
       }
     }
   }
-  .left_lower{
-
+  .left-menu__lower{
     padding:0,20px;
     background-color:#2f3e51;
     height:100%;
-      .group{
-        .group_name{
+      .left-menu__lower--group{
+        .left-menu__lower--group_name{
         color:#FFFFFF;
         font-size: 15px;
         padding: 20px,0,5px;
         }
-        .group_message{
+        .left-menu__lower--group_message{
         font-size:11px;
         color: #FFFFFF;
         padding-bottom:20px;

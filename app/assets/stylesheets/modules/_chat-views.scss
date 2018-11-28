@@ -8,13 +8,13 @@
     text-align:center;
     }
   }
-  .right_content{
-    .chat_mainspace{
+  .right-content{
+    .right-content__chat_mainspace{
       padding-bottom: 100px;
       height:calc(100vh - 90px);
       width:calc(100vw - 300px);
       float:left;
-      .title{
+      .right-content__chat-mainspace-title{
         border-bottom-color: #eeeeee;
         padding-left: 40px;
         .title_group_title{
@@ -27,7 +27,7 @@
         color:$light_gray;
         margin-top:15px
         }
-        .edit__button{
+        .edit-button{
         padding:0,20px;
         margin-top:28px;
         height:40px;
@@ -37,25 +37,27 @@
         color: #38AEF0;
         }
       }
-      .chat_texts{
+      .message{
         padding-left: 40px;
-        .testrightbold{
-        font-size:16px;
-        color:#434A54;
-        font-weight:bold;
-        margin-top:46px;
+        .upper-message{
+          .upper-message__user-name{
+          font-size:16px;
+          color:#434A54;
+          font-weight:bold;
+          margin-top:46px;
+          }
+          .upper-message__date{
+            color:#999999;
+            font-size:12px;
+          }
         }
-        .test_date{
-          color:#999999;
-          font-size:12px;
+        .lower-message{
+          .lower-message__content{
+          font-size:14px;
+          color:#434A54;
+          margin:10px,0,40px
+          }
         }
-        .test_right_normal{
-        font-size:14px;
-        color:#434A54;
-
-        margin:10px,0,40px
-        }
-      }
     }
     #footer{
     background-color:#AAAAAA;
@@ -64,9 +66,9 @@
     bottom:0;
     right:0;
     width:calc(100vw - 300px);
-      .form_area{
+      .footer__form-area{
         height:90px;
-        .form__message{
+        .footer__form-area-message{
         font-size: 16px;
         color:#434A54;
         width: calc( 100% - 200px );
@@ -75,17 +77,17 @@
         border: none;
         position:relative;
         }
-        .chat__main{
+        .footer__form-area-chat-main{
         position: absolute;
         top: 33px;
         right: 151px;
-          .chat__main__image{
+          .footer__form-area-image{
             .hidden{
             display:none;
             }
           }
         }
-        .form__submit{
+        .footer__form-area-form__submit{
           height:50px;
           width:100px;
           margin: 20px,40px,0,0;
