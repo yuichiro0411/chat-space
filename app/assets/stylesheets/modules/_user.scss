@@ -1,20 +1,27 @@
 .account-page {
-  &__inner {
+  .account-page__inner {
     width: 980px;
     margin: 60px auto;
     padding: 60px;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
-    @include clearfix();
 
-    &--left, &--right {
+
+    @include clearfix;
+
+    .account-page__inner--left, .account-page__inner--right {
       float: left;
       width: 50%;
     }
+    &:after {
+      clear: both;
+      content: "";
+      display: block;
+    }
   }
 
-  &__header {
+  .account-page__header {
     h2 {
       margin-bottom: 10px;
       letter-spacing: 3px;
@@ -45,21 +52,24 @@
   }
 
   .field {
-    &__label {
+    margin-bottom: 10px;
+
+    .field-label {
       padding: 10px 0;
+      letter-spacing: 1px;
       font-size: 14px;
       font-weight: 200;
-      @include field_test();
+
       i {
         font-size: 11px;
       }
     }
 
-    &__input {
+    .field-input {
       input {
         width: 100%;
         padding: 10px;
-        @include field_test();
+        letter-spacing: 1px;
       }
     }
   }

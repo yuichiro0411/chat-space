@@ -1,14 +1,12 @@
 
 
-  @import "config/reset.scss";
+  @import "./config/reset";
   // リセットSCSSを適用させるために設定。
   @import "font-awesome";
-  @import "config/color.scss";
-  @import "modules/flash.scss";
-  @import "modules/chat_views.scss";
-  @import "modules/sidebar.scss";
-  @import "modules/left_lower.scss";
-  @import "modules/group.scss";
-  @import "modules/user.scss";
-  @import "mixin/clearfix.scss";
-  @import "mixin/field.scss"
+  @import "./config/color";
+  @import "./modules/chat-views";
+  @import "./modules/sidebar";
+  @import "./modules/left-lower";
+  @import "./mixin/clearfix";
+  @import "./mixin/field";
+  @import "./modules/user";
