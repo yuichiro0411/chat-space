@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-before_action :set_group
+  before_action :set_group
 
   def index
     @message =  Message.new #Messageモデルの新しいインスタンス作成
@@ -9,11 +9,11 @@ before_action :set_group
 
   def create
     @message = @group.messages.new(message_params)
-    if  @message.save
+    if @message.save
       redirect_to group_messages_path(@group), notice:'メッセージをが送信されました。'
 #保存に成功した場合、メッセージを出してチャットページに移動。
     else
-      @messages = @group.messages.incldes(:user)
+      @messages = @group.messages.includes(:user)
       flash.now[:alert] = 'メッセージを入力してください'
       render :index
 #保存できなかった場合
@@ -23,7 +23,7 @@ before_action :set_group
   private
 
   def message_params
-    params.require(:massage).permit(:content, :image).merge(user_id: current_user.id)
+    params.require(:message).permit(:content, :image).merge(user_id: current_user.id)
   end
 
   def set_group

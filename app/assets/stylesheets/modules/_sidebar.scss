@@ -4,11 +4,11 @@
   width:300px;
   height:100vh;
   float:left;
-
+  // padding:0,20px;
   .left-menu__upper{
     height:50px;
     background-color: #253141;
-    padding:0, 20px,20px;
+    padding:20px;
     .user__name{
     font-size: 20px;
     color:$white;
@@ -20,21 +20,21 @@
       text-align:right;
       font-size:18px;
       color:$white;
-        .left-menu__upper--header-lists-icon{
-        color: $white;
-        }
+      }
+      .left-menu__upper--header-lists-icon{
+      color: $white;
       }
     }
   }
   .left-menu__lower{
-    padding:0,20px;
+    padding:20px;
     background-color:#2f3e51;
     height:100%;
       .left-menu__lower--group{
         .left-menu__lower--group_name{
         color:#FFFFFF;
         font-size: 15px;
-        padding: 20px,0,5px;
+        // padding: 20px,0,5px;
         }
         .left-menu__lower--group_message{
         font-size:11px;

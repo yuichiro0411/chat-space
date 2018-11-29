@@ -9,11 +9,12 @@
     }
   }
   .right-content{
-    .right-content__chat_mainspace{
+    .right-content__chat-mainspace{
       padding-bottom: 100px;
       height:calc(100vh - 90px);
       width:calc(100vw - 300px);
       float:left;
+      overflow-y: scroll;
       .right-content__chat-mainspace-title{
         border-bottom-color: #eeeeee;
         padding-left: 40px;
@@ -58,22 +59,24 @@
           margin:10px,0,40px
           }
         }
+      }
     }
     #footer{
-    background-color:#AAAAAA;
-    margin-top: auto;
-    position:fixed;
-    bottom:0;
-    right:0;
-    width:calc(100vw - 300px);
+      background-color:#AAAAAA;
+      margin-top: auto;
+      position:fixed;
+      bottom:0;
+      right:0;
+      width:calc(100vw - 300px);
+      height:90px;
       .footer__form-area{
         height:90px;
+        margin: 20px 0 0 40px;
         .footer__form-area-message{
         font-size: 16px;
         color:#434A54;
         width: calc( 100% - 200px );
         padding: 15px 10px 10px;
-        margin: 20px 0 0 40px;
         border: none;
         position:relative;
         }
@@ -81,16 +84,15 @@
         position: absolute;
         top: 33px;
         right: 151px;
-          .footer__form-area-image{
-            .hidden{
+          // .footer__form-area-image
+          .hidden{
             display:none;
-            }
           }
         }
         .footer__form-area-form__submit{
           height:50px;
           width:100px;
-          margin: 20px,40px,0,0;
+          margin:20px,40px,0,0;
           background-color: $light_blue;
           color: $white;
           border:none;
@@ -100,7 +102,6 @@
       }
     }
   }
-}
 
 
 
