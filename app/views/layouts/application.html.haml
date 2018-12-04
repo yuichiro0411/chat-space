@@ -1,32 +1,16 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{charset: "UTF-8"}
     %title ChatSpace
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-    %script{:src => "path/footerFixed.js", :type => "text/javascript"}
-    %link{:href => "https://use.fontawesome.com/releases/v5.0.6/css/all.css", :rel => "stylesheet"}/
+    %script{src: "path/footerFixed.js", type: "text/javascript"}
+    %link{href: "https://use.fontawesome.com/releases/v5.0.6/css/all.css", rel: "stylesheet"}/
 
-%body
-  %header
-    %p.test_header ヘッダー
-  .left-menu
-    .left_upper
-      %p.user_name ユーザー名
-      %p.text_awesome
-        = fa_icon("cog")
-        = fa_icon("edit")
-    .left_lower
-      %p.group_name 投稿者名
-      %p.new_message test.
+  %body
+  = render 'layouts/notifications'
 
-      %p.group_name 投稿者名
-      %p.new_message test.
-
-= yield
-
-
-
+  = yield
 
