@@ -84,7 +84,7 @@
         position: absolute;
         top: 33px;
         right: 151px;
-          // .footer__form-area-image
+        // .footer__form-area-image
           .hidden{
             display:none;
           }
@@ -92,13 +92,14 @@
         .footer__form-area-form__submit{
           height:50px;
           width:100px;
-          margin:20px,40px,0,0;
+          margin:20px 30px;
           background-color: $light_blue;
           color: $white;
           border:none;
           position:absolute;
+          right:0;
+          top:0;
         }
-
       }
     }
   }
