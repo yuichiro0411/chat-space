@@ -29,7 +29,7 @@ describe MessagesController do
       end
     end
 
-    context 'lnot log in' do #ログインしていない場合
+    context 'not log in' do #ログインしていない場合
       before do
       	get :index, params: {group_id: group.id}
       end
