@@ -4,6 +4,7 @@
   width:300px;
   height:100vh;
   float:left;
+  overflow-y: scroll;
   // padding:0,20px;
   .left-menu__upper{
     height:50px;
@@ -27,9 +28,9 @@
     }
   }
   .left-menu__lower{
-    padding:20px;
+    paddings:20px;
     background-color:#2f3e51;
-    height:100%;
+    // height:100%;
       .left-menu__lower--group{
         .left-menu__lower--group_name{
         color:#FFFFFF;
