@@ -37,6 +37,7 @@ $(document).on('turbolinks:load', function(){
       var html = buildHTML(data);
       $('.messages').append(html);
       $('.footer__form-area-message').val('')
+      // Submitで一番下までスクロール。
       function scrollTobottom(){
         var height = $('.right-content__chat-mainspace')[0].scrollHeight;
         var bottom = $('.right-content__chat-mainspace');
