@@ -1,31 +1,18 @@
-!!!
-%html
-  %head
-    %meta{charset: "UTF-8"}
-    %title ChatSpace
-    = csrf_meta_tags
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-    %link{crossorigin: "anonymous", href: "https://use.fontawesome.com/releases/v5.5.0/css/all.css",integrity: "sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU",rel: "stylesheet"}/
-
-  %body
-  = render 'shared/sidebar'
-
-  .right-content
-    .right-content__chat-mainspace
-      .right-content__chat-mainspace-title
-        %button.edit-button
-          edit
-        .message
-          = render @messages
-    %footer#footer
-      .footer__form-area
-        = form_for [@group, @message] do |f|
-          = f.text_field :content, class: 'footer__form-area-message', placeholder: 'type a message'
-          .footer__form-area-chat-main
-            = f.label :image , class: 'footer__form-area-image' do
-              =fa_icon 'picture-o', class: 'icon'
-              =f.file_field :image, class: 'hidden'
-          =f.submit 'Send', class: 'footer__form-area-form__submit'
-          /#form_forで2つの引数を渡している。普通、messageのCreateアクションは、messages_pathにPOSTメソッドでリクエストを送った際に実行される。今回は、messageはgroupにネストされている(ルーティング)のでパスがgroup_message_pathとなっている。@messageだけではmessage_pathにリクエストを送るのでレコード保存不可。
-          /#ネストされたモデルに対してform_forを用いる場合は、親のインスタンス（もしくは親のid）を第１引数、このモデルインスタンスを第２引数に設定する！
+.right-content
+  .right-content__chat-mainspace
+    .right-content__chat-mainspace-title
+      %button.edit-button
+        edit
+      .messages
+        = render @messages
+  %footer#footer
+    .footer__form-area
+      = form_for [@group, @message],html: {id: 'form'}  do |f|
+        = f.text_field :content, class: 'footer__form-area-message', placeholder: 'type a message'
+        .footer__form-area-chat-main
+          = f.label :image , class: 'footer__form-area-image' do
+            =fa_icon 'picture-o', class: 'icon'
+            =f.file_field :image, class: 'hidden'
+        =f.submit 'Send', class: 'footer__form-area-form__submit'
+        /#form_forで2つの引数を渡している。普通、messageのCreateアクションは、messages_pathにPOSTメソッドでリクエストを送った際に実行される。今回は、messageはgroupにネストされている(ルーティング)のでパスがgroup_message_pathとなっている。@messageだけではmessage_pathにリクエストを送るのでレコード保存不可。
+        /#ネストされたモデルに対してform_forを用いる場合は、親のインスタンス（もしくは親のid）を第１引数、このモデルインスタンスを第２引数に設定する！
