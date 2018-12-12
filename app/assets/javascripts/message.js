@@ -14,7 +14,7 @@ $(document).on('turbolinks:load', function(){
                     <p class= 'lower-message__content'>
                       ${data.content}
                     </p>
-                    <image= src='/message.image.url' class='lower-message__image' if message.image.present?>
+                    <image= src='/message.image.url' class='lower-message__image'>
                   </div>
                 </div>`;
   	return html;
@@ -23,9 +23,7 @@ $(document).on('turbolinks:load', function(){
   $('#form').on('submit', function(e){
   	e.preventDefault();
     var formData = new FormData(this);
-  	console.log(this)
   	var url = $(this).attr('action')
-    // var message = $('#form').val('');
     $.ajax({
       type: 'POST',
       url: url,
@@ -34,16 +32,11 @@ $(document).on('turbolinks:load', function(){
       contentType: false,
       dataType:'json'
     })
+    // 非同期通信OK
     .done(function(data){
-      // console.log(data)
       var html = buildHTML(data);
       $('.messages').append(html);
       $('.footer__form-area-message').val('')
-
-      // console.log('送信完了！');
-      // $('セレクタ').append('追加したいもの')で、操作された時に後から文章などを追加表示できる。
-      // 今回はhtml、つまりbuildHTMLされたものが後から追加される。
-      // $('messages').animate(scrollBottom(0));
       function scrollTobottom(){
         var height = $('.right-content__chat-mainspace')[0].scrollHeight;
         var bottom = $('.right-content__chat-mainspace');
@@ -51,6 +44,7 @@ $(document).on('turbolinks:load', function(){
       };
       scrollTobottom();
     })
+    // 非同期通信不可時
     .fail(function(){
       alert("OMG!!error!! Couldn't post");
     });
