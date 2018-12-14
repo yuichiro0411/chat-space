@@ -55,10 +55,7 @@ function buildHTML(data) {
       $('.messages').append(html);
       $('.footer__form-area-message').val('');
       // Submitで一番下までスクロール
-      function scrollToBottom() {
-        var bottom = $('.right-content__chat-mainspace');
-        bottom.animate({scrollTop:bottom[0].scrollHeight},'fast','swing')
-      }
+      $('.right-content__chat-mainspace').animate({scrollTop: $('.right-content__chat-mainspace')[0].scrollHeight}, 'fast');
     })
     // 非同期通信不可時
     .fail(function(){
