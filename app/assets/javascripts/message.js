@@ -1,55 +1,68 @@
 $(document).on('turbolinks:load', function(){
-  function buildHTML(data){
-    var image_url = $'message/image/${data.id}/${data.image}';
-  	var html = `<div class= 'message'>
-  	              <div class= 'upper-message'>
-  	                <div class= 'upper-message__user-name'>
-  	                  ${data.name}
-  	                </div>
-  	                <div class='upper-message__date'>
-  	                  ${data.created_at}
-  	                </div>
-  	              </div>
-                  <div class= 'lower-message'>
-                    <p class= 'lower-message__content'>
-                      ${data.content}
-                    </p>
-                   <img src= image_url, class='lower-message__image' >
-                    
-
-                  </div>
-                </div>`;
-  	return html;
-  }
-
-  $('#form').on('submit', function(e){
+function buildHTML(data) {
+    if( data.image.url == null ){
+      var html = `<div class= 'message'>
+    	              <div class= 'upper-message'>
+    	                <div class= 'upper-message__user-name'>
+    	                  ${data.name}
+    	                </div>
+    	                <div class='upper-message__date'>
+    	                  ${data.created_at}
+    	                </div>
+    	              </div>
+                    <div class= 'lower-message'>
+                      <p class= 'lower-message__content'>
+                        ${data.content}
+                      </p>
+                    </div>
+                  </div>`
+    }
+    else {
+      var html = `<div class= 'message'>
+                    <div class= 'upper-message'>
+                      <div class= 'upper-message__user-name'>
+                        ${data.name}
+                      </div>
+                      <div class='upper-message__date'>
+                        ${data.created_at}
+                      </div>
+                    </div>
+                    <div class= 'lower-message'>
+                      <p class= 'lower-message__content'>
+                        ${data.content}
+                      </p>
+                      <img src= ${data.image.url} class='lower-message__image'>
+                    </div>
+                  </div>`
+    }
+    return html;
+  };
+  $('#form').on('submit',function(e){
   	e.preventDefault();
     var formData = new FormData(this);
-  	var url = $(this).attr('action')
+  	var url = window.location.pathname;
     $.ajax({
       type: 'POST',
       url: url,
       data: formData,
       processData: false,
       contentType: false,
-      dataType:'json'
+      dataType: 'json'
     })
     // 非同期通信OK
     .done(function(data){
       var html = buildHTML(data);
       $('.messages').append(html);
-      $('.footer__form-area-message').val('')
-      // Submitで一番下までスクロール。
-      function scrollTobottom(){
-        var height = $('.right-content__chat-mainspace')[0].scrollHeight;
+      $('.footer__form-area-message').val('');
+      // Submitで一番下までスクロール
+      function scrollToBottom() {
         var bottom = $('.right-content__chat-mainspace');
-        bottom.animate({scrollTop: height},'fast','swing');
-      };
-      scrollTobottom();
+        bottom.animate({scrollTop:bottom[0].scrollHeight},'fast','swing')
+      }
     })
     // 非同期通信不可時
     .fail(function(){
-      alert("OMG!!error!! Couldn't post");
+      alert("OMG!!error!! Couldn't post")
     });
     return false;
   });
