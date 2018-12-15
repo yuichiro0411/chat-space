@@ -1,27 +1,66 @@
-$(function(){
-	function buildHTML(data){
-
-	}
-  var formData = new FormData(form);
-
-  $('footer__form-area').submit(function(e){
+$(document).on('turbolinks:load', function(){
+function buildHTML(data) {
+    if( data.image.url == null ){
+      var html = `<div class= 'message'>
+    	              <div class= 'upper-message'>
+    	                <div class= 'upper-message__user-name'>
+    	                  ${data.name}
+    	                </div>
+    	                <div class='upper-message__date'>
+    	                  ${data.created_at}
+    	                </div>
+    	              </div>
+                    <div class= 'lower-message'>
+                      <p class= 'lower-message__content'>
+                        ${data.content}
+                      </p>
+                    </div>
+                  </div>`
+    }
+    else {
+      var html = `<div class= 'message'>
+                    <div class= 'upper-message'>
+                      <div class= 'upper-message__user-name'>
+                        ${data.name}
+                      </div>
+                      <div class='upper-message__date'>
+                        ${data.created_at}
+                      </div>
+                    </div>
+                    <div class= 'lower-message'>
+                      <p class= 'lower-message__content'>
+                        ${data.content}
+                      </p>
+                      <img src= ${data.image.url} class='lower-message__image'>
+                    </div>
+                  </div>`
+    }
+    return html;
+  };
+  $('#form').on('submit',function(e){
   	e.preventDefault();
-    $.ajax()
+    var formData = new FormData(this);
+  	var url = window.location.pathname;
+    $.ajax({
       type: 'POST',
-      url: '/groups/:group_id/messages',
+      url: url,
       data: formData,
       processData: false,
-      contentType: false
+      contentType: false,
+      dataType: 'json'
+    })
+    // 非同期通信OK
     .done(function(data){
-      var html = buildHTML(data)
-      $('.message').append(html)
-      // $('セレクタ').append('追加したいもの')で、操作された時に後から文章などを追加表示できる。
-      // 今回はhtml、つまりbuildHTMLされたものが後から追加される。
-      // $('.right-content').animate({scrollTop})
-      $('.right-content').animate({scrollTop: $('.right-content')},'fast');
-      })
-     .fail(function(data){
-        alert("OMG!!error!! Couldn't post");
-      });
+      var html = buildHTML(data);
+      $('.messages').append(html);
+      $('.footer__form-area-message').val('');
+      // Submitで一番下までスクロール
+      $('.right-content__chat-mainspace').animate({scrollTop: $('.right-content__chat-mainspace')[0].scrollHeight}, 'fast');
+    })
+    // 非同期通信不可時
+    .fail(function(){
+      alert("OMG!!error!! Couldn't post")
+    });
+    return false;
   });
 });

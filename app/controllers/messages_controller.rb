@@ -12,10 +12,11 @@ class MessagesController < ApplicationController
     # メッセージを新規作成
     if @message.save
       # redirect_to group_messages_path(@group), notice:'メッセージが送信されました。'
-#保存に成功した場合、メッセージを出してチャットページに移動。
+      #保存に成功した場合、メッセージを出してチャットページに移動。
       respond_to do |format|
-        format.html{ redirect_to group_messages_path(@group) }
+        format.html { redirect_to group_messages_path(@group) }
         format.json
+        # respond_toでjsonとHTMLに条件分岐
       end
     else
       @messages = @group.messages.includes(:user)
