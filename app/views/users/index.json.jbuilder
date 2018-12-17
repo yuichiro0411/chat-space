@@ -1,4 +1,4 @@
-json,array! do
-  json.name @user.name
-  json.id @user.id
+json,array! user do
+  json.name user.name
+  json.id user.id
 end
