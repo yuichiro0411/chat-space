@@ -18,11 +18,10 @@ class MessagesController < ApplicationController
         format.json
         # respond_toでjsonとHTMLに条件分岐
       end
-    else
+    else #保存できなかった場合
       @messages = @group.messages.includes(:user)
       flash.now[:alert] = 'メッセージを入力してください'
       render :index
-#保存できなかった場合
     end
   end
 

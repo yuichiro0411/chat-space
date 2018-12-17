@@ -5,8 +5,10 @@
     %title ChatSpace
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-    %script{src: "message.js", type: "text/javascript"}
+    = javascript_include_tag 'application',media: 'all', 'data-turbolinks-track': 'reload'
+    / %script
+    / %script{src: "message.js", type: "text/javascript"}
+    / %script{src: "index.js", type: "text/javascript"}
     %link{href: "https://use.fontawesome.com/releases/v5.0.6/css/all.css", rel: "stylesheet"}/
 
 

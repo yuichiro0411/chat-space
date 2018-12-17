@@ -53,7 +53,8 @@ function buildHTML(data) {
     .done(function(data){
       var html = buildHTML(data);
       $('.messages').append(html);
-      $('.footer__form-area-message').val('');
+      $('.footer__form-area-message','hidden').val('');
+      $('hidden').val('')
       // Submitで一番下までスクロール
       $('.right-content__chat-mainspace').animate({scrollTop: $('.right-content__chat-mainspace')[0].scrollHeight}, 'fast');
     })
