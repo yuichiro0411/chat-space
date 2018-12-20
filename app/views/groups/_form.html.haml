@@ -1,4 +1,4 @@
-= form_for group do |f| #以下含めform,inputタグをform_forで書き換えた。
+= form_for group do |f|
   -  if group.errors.any?
     /%form#new_chat_group.new_chat_group{accept_charset: "UTF-8", action: "/chat_groups", method: "post"}
     .chat-group-form__errors
@@ -6,21 +6,22 @@
     %ul
       - group.errors.full_messages.each do |message|
         %li= message
-        / フラッシュメッセージではなくインスタンスのerrorsやerrors_full_messageを使用し、エラーメッセージを表示する。Railsのモデ ルにおいて、バリデーションエラーが発生した場合、errors.full_messagesメソッドを利用することで、発生した全てのエラーメッセージを配列で取得することができます。group.errors.full_messagesの配列に対し、eachメソッドを用いることで、エラーメッセージを1つずつ取り出しています。
-  .chat-group-form__field
+
+  .chat-group-form__field.clearfix
     .chat-group-form__field--left
       / %label.chat-group-form__label{for: "chat_group_name"} グループ名
       = f.label :name, class: 'chat-group-form__label'
     .chat-group-form__field--right
       / %input#chat_group_name.chat-group-form__input{name: "chat_group[name]", placeholder: "グループ名を入力してください", type: "text"}/
-      = f.text_field :name, class: 'chat__group_name chat-group_form__input', placeholder: 'グループ名を入力してください。'
+      = f.text_field :name, class: 'chat-group-form__input',id: 'chat_group_name', placeholder: 'グループ名を入力してください。',type: "text"
   .chat-group-form__field.clearfix
 
     .chat-group-form__field--left
       %label.chat-group-form__label{:for => "chat_group_チャットメンバーを追加"} チャットメンバーを追加
     .chat-group-form__field--right
       .chat-group-form__search.clearfix
-        %input#user-search-field.chat-group-form__input{:placeholder => "追加したいユーザー名を入力してください", :type => "text"}/
+        =f.text_field :name, class: 'chat-group-form__input', id: 'user-search-field', placeholder: '追加したいユーザー名を入力してください', type: "text"
+        / %input#user-search-field.chat-group-form__input{:placeholder => "追加したいユーザー名を入力してください", :type => "text"}/
       #user-search-result
 
   .chat-group-form__field.clearfix
@@ -32,7 +33,7 @@
       #chat-group-users
         #chat-group-user-22.chat-group-user.clearfix
           %input{:name => "chat_group[user_ids][]", :type => "hidden", :value => "22"}/
-          %p.chat-group-user__name 
+          %p.chat-group-user__name
           / Username
 
   .chat-group-form__field.clearfix

@@ -1,6 +1,6 @@
 $(document).on('turbolinks:load', function(){
   function buildHTML(user){
-    var html = `<li>
+    var html = `<li class='chat-group-users'>
   	              <div class="chat-group-user clearfix">
                     <p class="chat-group-user__name">
                       ${user.name}

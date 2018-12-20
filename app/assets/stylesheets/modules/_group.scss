@@ -1,7 +1,7 @@
 .chat-group-form {
   width: 980px;
   margin: 60px auto;
-  padding: 60px;
+  padding: 40px;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -43,7 +43,7 @@
   .chat-group-form__field {
     margin-top: 30px;
     @include clearfix;
-
+    overflow:hidden;
     .chat-group-form__field--left {
       float: left;
       width: 30%;
@@ -72,14 +72,16 @@
       box-sizing: border-box;
     }
   }
-
+  .chat-group-users{
+    list-style: none;
+  }
   .chat-group-user {
     padding: 0 15px;
     line-height: 50px;
     font-size: 14px;
     border-bottom: 1px solid #ddd;
     &:after {
-    @include clearfix();
+      @include clearfix();
     }
 
     .chat-group-user__name {
