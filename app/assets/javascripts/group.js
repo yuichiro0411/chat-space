@@ -12,8 +12,7 @@ $(document).on('turbolinks:load', function(){
                 </li>`;
     $('#user-search-result').append(html);
   };
-//htmlを実装し、Keyupされると、ユーザーネームと追加のリンクが表示される。
-//
+//Keyupされると、ユーザーネームと追加のリンクが表示される。
   function appendNoUser(user){
     var html =`<li>
                 <div class="chat-group-user clearfix">
@@ -25,12 +24,6 @@ $(document).on('turbolinks:load', function(){
   form.on('keyup', function(e){
   	e.preventDefault();
     var input = form.val();
-    console.log(input);
-    // var inputs = input.split(" ").filter(function(e) { return e; });
-    // .filterで引数の関数条件に合致した要素では配列を作成。
-    // filterに引き渡された関数の引数eに配列の要素がある。
-    // eに要素が入っている場合、返り値はtrueになり配列に格納されるが、空文字の時はFalseとなるので配列に格納されない。
-    // スペースキーで検索単語を区切れるようにする。
 
     $.ajax({
       type: 'GET',
@@ -42,7 +35,6 @@ $(document).on('turbolinks:load', function(){
       $('#user-search-result').empty();
       if (input.length !== 0){
         users.forEach(function(user){
-          console.log(user)
           buildHTML(user);
         })
       }

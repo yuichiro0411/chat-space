@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  # render :layout => false
   def edit
   end
 
