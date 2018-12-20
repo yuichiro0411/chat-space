@@ -47,7 +47,7 @@ function buildHTML(data) {
       data: formData,
       processData: false,
       contentType: false,
-      dataType: 'json'
+      dataType: 'json',
     })
     // 非同期通信OK
     .done(function(data){

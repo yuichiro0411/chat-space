@@ -1,6 +1,5 @@
 class MessagesController < ApplicationController
   before_action :set_group
-
   def index
     @message =  Message.new #Messageモデルの新しいインスタンス作成
     @messages = @group.messages.includes(:user)
