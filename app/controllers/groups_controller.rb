@@ -16,6 +16,9 @@ class GroupsController < ApplicationController
       render :new
     end
   end
+
+  def edit
+  end
 #redirect_toがHTTPリクエストを送り、そのレスポンスとして返ってくるビューを表示するのに対し、renderはHTTPリクエストを送らず、該当するビューだけを表示.
   def update
     if @group.update(group_params)
