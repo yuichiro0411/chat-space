@@ -44,6 +44,7 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 4.0'
   gem 'faker'
   gem 'capybara'
+  gem 'sqlite3'
 end
 
 group :development do
@@ -70,6 +71,7 @@ end
 
 group :production do
   gem "unicorn"
+  gem 'pg'
 end
 
 gem 'haml-rails'
@@ -78,3 +80,4 @@ gem 'font-awesome-rails'
 gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
+
