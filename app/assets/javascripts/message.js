@@ -55,9 +55,12 @@ function buildHTML(data) {
       $('.messages').append(html);
       $('.footer__form-area-message','hidden').val('');
       $('hidden').val('')
+      $(this).parent('#form').find(':text').empty();
+      $(this).parent('#form').find(':image').empty(); if image_present?
       // Submitで一番下までスクロール
       $('.right-content__chat-mainspace').animate({scrollTop: $('.right-content__chat-mainspace')[0].scrollHeight}, 'fast');
     })
+
     // 非同期通信不可時
     .fail(function(){
       alert("OMG!!error!! Couldn't post")
